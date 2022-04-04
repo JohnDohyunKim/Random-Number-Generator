@@ -14,23 +14,27 @@ step = 0
 add = 0
 
 
-num_of_input = int(input('1. How many numbers?'))
+num_of_input = int(input('1. How many numbers? '))
 
-lowest_input = int(input('2. Lowest number wanted?'))
+if (num_of_input == 0):
+    "Input is Zero"
+    raise Exception('Enter Number Not Zero')
 
-highest_input = int(input('3. Highest number wanted?'))
+lowest_input = int(input('2. Lowest number wanted? '))
+
+highest_input = int(input('3. Highest number wanted? '))
 
 if (highest_input <= lowest_input):
     "Highest Number is Lower than Lowest Number"
     raise Exception('Highest Number Too Low')
 
-type_int = input('4. Evens or Odd? (yes or no)')
+type_int = input('4. Evens or Odd? (yes or no) ')
 
 if ((type_int.lower().strip() != 'yes') and (type_int.lower().strip() != 'no')):
     "Answer to Question 4 is Invalid"
     raise Exception('Invalid Input for 4!')
 
-repeat = input('5. Repeats? (yes or no)')
+repeat = input('5. Repeats? (yes or no) ')
 
 if ((repeat.lower().strip() != 'yes') and (repeat.lower().strip() != 'no')):
     "Answer to Question 5 is Invalid"
@@ -53,7 +57,7 @@ if (type_int.lower().strip() == 'yes'):
     "Returns Evens and Odds"
     step = 2
     
-    even_or_odd = input('Even or Odd?')
+    even_or_odd = input('Even or Odd? ')
     
     if ((even_or_odd.lower().strip() != 'even') and (even_or_odd.lower().strip() != 'odd')):
         "Answer to Even or Odd is Invalid"
@@ -64,7 +68,7 @@ if (type_int.lower().strip() == 'yes'):
         if ((lowest_input % 2) != 0):
             "Starting Number is Odd"
             add += 1
-        for x in range(len(array)):
+        for x in range(num_of_input):
             "Make Array of Even"
             if ((array[x] % 2) == 0):
                 new_arr.append(array[x])
@@ -74,7 +78,7 @@ if (type_int.lower().strip() == 'yes'):
         if ((lowest_input % 2) == 0):
             "Starting Number is Even"
             add += 1
-        for x in range(len(array)):
+        for x in range(num_of_input):
             "Make Array of Odd"
             if ((array[x] % 2) != 0):
                 new_arr.append(array[x])
@@ -98,7 +102,6 @@ else:
         for i in range(num_of_input):
             new_arr.append(rand.randrange(highest_input+1))
         print(new_arr)
-    
     
     
 
