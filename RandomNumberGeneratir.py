@@ -68,7 +68,7 @@ if (type_int.lower().strip() == 'yes'):
         if ((lowest_input % 2) != 0):
             "Starting Number is Odd"
             add += 1
-        for x in range(num_of_input):
+        for x in range(highest_input-lowest_input):
             "Make Array of Even"
             if ((array[x] % 2) == 0):
                 new_arr.append(array[x])
@@ -78,7 +78,7 @@ if (type_int.lower().strip() == 'yes'):
         if ((lowest_input % 2) == 0):
             "Starting Number is Even"
             add += 1
-        for x in range(num_of_input):
+        for x in range(highest_input-lowest_input):
             "Make Array of Odd"
             if ((array[x] % 2) != 0):
                 new_arr.append(array[x])
