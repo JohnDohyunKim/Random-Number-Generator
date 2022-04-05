@@ -43,7 +43,7 @@ if ((repeat.lower().strip() != 'yes') and (repeat.lower().strip() != 'no')):
 
 "Error: If Results Aren't Possible"
 
-if ((repeat.lower().strip() == 'no') and (type_int.lower().strip() == 'no') and (num_of_input > highest_input)):
+if ((repeat.lower().strip() == 'no') and (type_int.lower().strip() == 'no') and (num_of_input > (abs(highest_input + 1) + abs(lowest_input)))):
     "Number of Desired Numbers Exceeds Possible Numbers Despite No Repeats"
     raise Exception('Asking for Too Many Numbers')
 
